@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { Housinglocation } from '../housinglocation';
+
+import { RouterLink,RouterOutlet } from '@angular/router';
 import { EmailValidator, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,RouterLink,RouterOutlet],
   template: `
   <article>
-    <img class="listing-photo" [src]="housingLocation?.photo"
+
+    <img [routerLink]="['/']" class="listing-photo" [src]="housingLocation?.photo"
       alt="Exterior photo of {{housingLocation?.name}}"/>
     <section class="listing-description">
       <h2 class="listing-heading">{{housingLocation?.name}}</h2>
@@ -33,7 +36,7 @@ import { EmailValidator, FormControl, FormGroup, ReactiveFormsModule } from '@an
       <input id="last-name" type="text" formControlName="lastName">
       <label for="email">Email</label>
         <input id="email" type="email" formControlName="email">
-        <button type="submit" class="primary">Apply now</button>
+        <button type="submit" (click)="submitdata()"class="primary">Apply now</button>
     </form>
 
     </section>
@@ -63,6 +66,9 @@ export class DetailsComponent {
       this.applyForm.value.lastName ?? '',
       this.applyForm.value.email ?? ''
     );
+  }
+  submitdata(){
+alert("Data Submit Sucessfully")
   }
   }
 
