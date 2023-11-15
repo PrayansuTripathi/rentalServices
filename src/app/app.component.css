@@ -11,7 +11,12 @@
     padding: var(--content-padding);
   }
   
-  
+  .brand-logo{
+    z-index: -2;
+    width: 128px;
+    position: absolute;
+    top: -20px;
+  }
   /*
   Copyright Google LLC. All Rights Reserved.
   Use of this source code is governed by an MIT-style license that
