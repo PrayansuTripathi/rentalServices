@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
     <main>
       <a [routerLink]="['/']"></a>
       <header class="brand-name">
-        <img class="brand-logo" src="/assets/logo.png" alt="logo" aria-hidden="true">
+        <!-- <img class="brand-logo" src="" alt="logo" aria-hidden="true"> -->
       </header>
       <section class="content">
       <router-outlet></router-outlet>
